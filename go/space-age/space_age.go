@@ -33,8 +33,8 @@ func Age(sec float64, planet Planet) float64 {
 		"Neptune": 164.79132,
 	}
 
-	yearFactor, err := yearMap[planet]
-	if !err {
+	yearFactor, ok := yearMap[planet]
+	if ok {
 		ret := sec / (EarthSec * yearFactor)
 		return math.Round(ret*100) / 100
 	}

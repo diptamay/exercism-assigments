@@ -5,7 +5,7 @@ package letter
 type FreqMap map[rune]int
 
 // ConcurrentFrequency counts the frequency in parallel of each rune in a list of
-// text and returns this data as a FreqMap.
+// text and returns this as a FreqMap.
 func ConcurrentFrequency(sl []string) FreqMap {
 	m := FreqMap{}
 	ch := make(chan FreqMap, len(sl))
